@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node-var .
+  - docker build -t simple-node-var --build-arg TEST_OUTPUT=${TEST_OUTPUT} .
   - docker tag simple-node-var dahluwalia3/simple-node-var:latest
 
 after_success:
